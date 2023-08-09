@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+ .error_msg_container {
+  padding: 5px;
+  border: 1px solid gray;
+ }

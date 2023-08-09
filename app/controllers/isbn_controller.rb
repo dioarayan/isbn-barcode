@@ -14,7 +14,7 @@ class IsbnController < ApplicationController
       format.html {render :result, locals: { check_digit: check_digit, final_result: get_input + check_digit.to_s }}
     end
       rescue CalculateDigitsException => e
-      redirect_to request.path, error: e.calculate_error_message
+      redirect_to root_path, alert: e.formatting_error_message
   end
 
   private

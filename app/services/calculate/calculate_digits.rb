@@ -62,6 +62,14 @@ class Calculate::CalculateDigits
       return diff
     end
   end
+  
+  def check_format(input)
+    if input.scan(/\D/).empty? && input.length == 12
+      convert_to_array_digit(input)
+    else
+      raise CalculateDigitsException
+    end
+  end
 
   # def concat_final_result(input, num)
   #   string_num = num.to_s
@@ -69,7 +77,7 @@ class Calculate::CalculateDigits
   # end
 
   def check_digit
-    @check_digit  = convert_to_array_digit(isbn_input)
+    @check_digit  = check_format(isbn_input)
   end
   
 end
