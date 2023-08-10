@@ -19,9 +19,25 @@ class Calculate::CalculateDigits
     raise CalculateDigitsException
   end
 
-  def convert_to_array_digit(input)
-    @convert_to_array_digit ||= (input.chars).map { |string| string.to_i }
-    calculate_each_digit(@convert_to_array_digit)
+  def subtract_by_ten(num)
+    diff = 10 - num
+    if diff == 10
+      return 0
+    else
+      return diff.to_s
+    end
+  end
+    
+  def add_digits(array)
+    sum = 0
+    array.each do |i|
+      sum += i
+    end
+    mod_by_ten(sum)
+  end
+
+  def mod_by_ten(num)
+    subtract_by_ten(num % 10)
   end
 
   def calculate_each_digit(array)
@@ -41,30 +57,14 @@ class Calculate::CalculateDigits
     @calculate_each_digit = result
     add_digits(@calculate_each_digit)
   end
-
-  def add_digits(array)
-    sum = 0
-    array.each do |i|
-      sum += i
-    end
-    mod_by_ten(sum)
-  end
   
-  def mod_by_ten(num)
-    subtract_by_ten(num % 10)
-  end
-
-  def subtract_by_ten(num)
-    diff = 10 - num
-    if diff == 10
-      return 0
-    else
-      return diff
-    end
+  def convert_to_array_digit(input)
+    @convert_to_array_digit ||= (input.chars).map { |string| string.to_i }
+    calculate_each_digit(@convert_to_array_digit)
   end
   
   def check_format(input)
-    if input.scan(/\D/).empty? && input.length == 12
+    if input.scan(/\D/).empty? && input.length == 12 && input[0, 3] == '978'
       convert_to_array_digit(input)
     else
       raise CalculateDigitsException

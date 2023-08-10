@@ -1,32 +1,41 @@
 require "rails_helper"
 
-describe '#Show check digit result' do
-  let(:input) { :isbn_input }
+RSpec.shared_examples "raises exception" do |input|
+  it 'displays error message' do
+    expect { Calculate::CalculateDigits.new(isbn_input: input).call }.to raise_error(CalculateDigitsException)
+  end
+end
 
-  shared_examples "an invalid input" do
+RSpec.describe 'CalculateDigitsService' do
+  describe '#Call' do
     
-    it { is_expected.not_to be_valid }
-  end
+    context "when the input is valid" do 
+      isbn_input = '978014300723'
 
-  context "when the input is blank" do 
-    input = ""
+      it 'displays the correct check digit' do
+        input = Calculate::CalculateDigits.new(isbn_input: isbn_input).call
+        expect(input).to eq('4')
+      end 
+    end
 
-    expect_any_instance_of(isbn_controller).to receive(:solve).with()
-    
+    context "when the input has letters" do
+      isbn_input = '978014300723asd'
 
-    it_behaves_like "an invalid input"
-  end
+      it_behaves_like 'raises exception', isbn_input
+    end
 
-  context "when the input has letters present" do
-    let(:input) {'978asd123'}
+    context "when the input has a length other than 12" do
+      isbn_input = '97801430072'
 
-    it_behaves_like "an invalid input"
-  end
+      it_behaves_like 'raises exception', isbn_input
+    end
 
-  context "when the input has minimum numbers of 12" do
-    let(:input) {'978'}
+    context "when the input does not start 978" do
+      isbn_input = '12301430072'
 
-    it_behaves_like "an invalid input"
+      it_behaves_like 'raises exception', isbn_input
+    end
+
   end
 
 end
