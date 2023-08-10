@@ -4,14 +4,10 @@ class IsbnController < ApplicationController
     
   end 
 
-  def result
-
-  end
-
-  def solve
+  def calculate
     check_digit = Calculate::CalculateDigits.call(isbn_input: get_input)
     respond_to do |format|
-      format.html {render :result, locals: { check_digit: check_digit, final_result: get_input + check_digit.to_s }}
+      format.html {render :result, locals: { check_digit: check_digit, final_result: get_input + check_digit }}
     end
       rescue CalculateDigitsException => e
       redirect_to root_path, alert: e.formatting_error_message
@@ -24,7 +20,7 @@ class IsbnController < ApplicationController
   end
 
   def complete_ISBN
-    return check_digit
+    return check_digit.to_s
   end
 
 end

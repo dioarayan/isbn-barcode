@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "isbn#index"
-  post 'isbn-result', to:'isbn#solve', as: 'solve'
+  get 'isbn-result', to:'isbn#calculate', as: 'calculate'
 end
