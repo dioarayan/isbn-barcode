@@ -1,8 +1,8 @@
 <section>
   <h1>Calculate for complete ISBN</h1>
-  <%= form_with url: solve_path, local: true, method: :post, data: { turbo: false } do %>
+  <%= form_with url: solve_path, local: true, method: :post, data: { turbo: false }, class: "calculate" do %>
     <%= text_field_tag "isbn_input", nil, required: true %>
-    <%= submit_tag "Solve" %>
+    <%= submit_tag "Calculate" %>
   <% end %>
 
 </section>

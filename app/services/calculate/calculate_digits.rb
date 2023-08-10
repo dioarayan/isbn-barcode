@@ -14,13 +14,13 @@ class Calculate::CalculateDigits
   attr_reader :isbn_input
 
   def handle_calculate
-    return convert_to_array_digit
+    return check_digit
 
     raise CalculateDigitsException
   end
 
-  def convert_to_array_digit
-    @convert_to_array_digit ||= (isbn_input.chars).map { |string| string.to_i }
+  def convert_to_array_digit(input)
+    @convert_to_array_digit ||= (input.chars).map { |string| string.to_i }
     calculate_each_digit(@convert_to_array_digit)
   end
 
@@ -57,21 +57,27 @@ class Calculate::CalculateDigits
   def subtract_by_ten(num)
     diff = 10 - num
     if diff == 10
-      concat_final_result(isbn_input, 0)
+      return 0
     else
-      concat_final_result(isbn_input, diff)
+      return diff
+    end
+  end
+  
+  def check_format(input)
+    if input.scan(/\D/).empty? && input.length == 12
+      convert_to_array_digit(input)
+    else
+      raise CalculateDigitsException
     end
   end
 
-  def concat_final_result(input, num)
-    string_num = num.to_s
-    result = input + string_num
-    complete_ISBN(result) 
-  end
+  # def concat_final_result(input, num)
+  #   string_num = num.to_s
+  #   return input + string_num
+  # end
 
-  def complete_ISBN(result) 
-    puts result
-    @complete_ISBN  = result
+  def check_digit
+    @check_digit  = check_format(isbn_input)
   end
   
 end
