@@ -1,12 +1,17 @@
 require "byebug"
 
-module CapyBaraHelper
+module CapybaraHelper
   def click_calculate
     visit root_path
 
-    click_on "Calculate"
+    within ".calculate" do
+      fill_in "isbn_input", with: '978014300723'
+      click_button "Calculate"
+    end
 
     expect(page).to have_content("Result")
+      .and have_content(4)
+      .and have_content('9780143007234')
   end
 end
 
