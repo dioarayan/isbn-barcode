@@ -11,7 +11,12 @@
   </head>
 
   <body>
-    <%= render 'layouts/message' %>
-    <%= yield %>
+    <div id="container">
+    <h1>Calculate for check digit</h1>
+      <div class="flex-left">
+        <%= yield %>
+        <%= render 'layouts/message' %>
+      </div>
+    </div>
   </body>
 </html>

@@ -4,6 +4,6 @@ class CalculateDigitsException < StandardError
   end
 
   def formatting_error_message
-    "Failed to calculate check digit, please input a valid ISBN"
+    "Please input a valid ISBN"
   end
 end

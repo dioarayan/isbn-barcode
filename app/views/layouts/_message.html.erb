@@ -1,5 +1,7 @@
-<% flash.each do |msg| %>  
-  <div class="error_msg_container">
-    <p><%= msg %></p>
-  </div>
+<% if flash.any? %>
+  <% flash.each do |name, msg| %>  
+    <div class="error_msg_container">
+      <small><%= msg %></small>
+    </div>
+  <% end %>
 <% end %>
