@@ -1,5 +1,5 @@
 <section>
-  <h1>Calculate for complete ISBN</h1>
+  <h3 style="text-align: center;">Enter ISBN:</h3>
   <%= form_with url: calculate_path, local: true, method: :get, data: { turbo: false }, class: "calculate" do %>
     <%= text_field_tag(:isbn_input, params[:isbn_input], required: true) %>
     <%= submit_tag "Calculate" %>
