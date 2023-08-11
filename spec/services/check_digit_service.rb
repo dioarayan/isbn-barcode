@@ -13,8 +13,8 @@ RSpec.describe 'CalculateDigitsService' do
       isbn_input = '978014300723'
 
       it 'displays the correct check digit' do
-        input = Calculate::CalculateDigits.new(isbn_input: isbn_input).call
-        expect(input).to eq('4')
+        result = Calculate::CalculateDigits.new(isbn_input: isbn_input).call
+        expect(result).to eq('4')
       end 
     end
 
