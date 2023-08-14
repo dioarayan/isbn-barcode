@@ -1,16 +1,11 @@
 <section>
   <h3 style="text-align: center;">Enter ISBN:</h3>
-  <%= form_with url: calculate_path, local: true, method: :get, data: { turbo: false }, class: "calculate" do %>
-    <%= text_field_tag(:isbn_input, params[:isbn_input], required: true) %>
+
+  <%= form_tag(calculate_isbn_path, method: :post, remote: true) do %>
+    <%= text_field_tag "isbn_input", params[:isbn_input] %>
     <%= submit_tag "Calculate" %>
   <% end %>
 
-  <input type='number' id='input' name='input'>
-  
-  <%= link_to "Calculate", calculate_path %>
-
-  <p>Final ISBN is <%= if @result then final_result else "" end %> </p>
-
-
+  <p>Complete ISBN is: <span id="isbn-result"><%= render 'isbn/final_result' %></span></p>
 
 </section>

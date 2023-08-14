@@ -27,6 +27,10 @@ class Calculate::CalculateDigits
       return diff.to_s
     end
   end
+  
+  def mod_by_ten(num)
+    subtract_by_ten(num % 10)
+  end
     
   def add_digits(array)
     sum = 0
@@ -35,11 +39,7 @@ class Calculate::CalculateDigits
     end
     mod_by_ten(sum)
   end
-
-  def mod_by_ten(num)
-    subtract_by_ten(num % 10)
-  end
-
+  
   def calculate_each_digit(array)
     result= []
     array.each_with_index do |digit, index|
@@ -62,22 +62,9 @@ class Calculate::CalculateDigits
     @convert_to_array_digit ||= (input.chars).map { |string| string.to_i }
     calculate_each_digit(@convert_to_array_digit)
   end
-  
-  def check_format(input)
-    if input.scan(/\D/).empty?
-      convert_to_array_digit(input)
-    else
-      raise CalculateDigitsException
-    end
-  end
-
-  # def concat_final_result(input, num)
-  #   string_num = num.to_s
-  #   return input + string_num
-  # end
 
   def check_digit
-    @check_digit  = check_format(isbn_input)
+    @check_digit  = convert_to_array_digit(isbn_input)
   end
   
 end
