@@ -5,4 +5,12 @@
     <%= submit_tag "Calculate" %>
   <% end %>
 
+  <input type='number' id='input' name='input'>
+  
+  <%= link_to "Calculate", calculate_path %>
+
+  <p>Final ISBN is <%= if @result then final_result else "" end %> </p>
+
+
+
 </section>
