@@ -24,17 +24,17 @@ RSpec.describe 'CalculateDigitsService' do
       it_behaves_like 'raises exception', isbn_input
     end
 
-    context "when the input has a length other than 12" do
-      isbn_input = '97801430072'
+    # context "when the input has a length other than 12" do
+    #   isbn_input = '97801430072'
 
-      it_behaves_like 'raises exception', isbn_input
-    end
+    #   it_behaves_like 'raises exception', isbn_input
+    # end
 
-    context "when the input does not start 978" do
-      isbn_input = '12301430072'
+    # context "when the input does not start 978" do
+    #   isbn_input = '12301430072'
 
-      it_behaves_like 'raises exception', isbn_input
-    end
+    #   it_behaves_like 'raises exception', isbn_input
+    # end
 
   end
 

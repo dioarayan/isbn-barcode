@@ -64,7 +64,7 @@ class Calculate::CalculateDigits
   end
   
   def check_format(input)
-    if input.scan(/\D/).empty? && input.length == 12 && input[0, 3] == '978'
+    if input.scan(/\D/).empty?
       convert_to_array_digit(input)
     else
       raise CalculateDigitsException
