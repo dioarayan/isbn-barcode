@@ -9,26 +9,26 @@ end
 RSpec.describe 'CalculateDigitsService' do
   describe '#Call' do
     
-    context "when the input is valid" do 
+    context "when there is an input" do 
       isbn_input = '978014300723'
 
-      it 'displays the correct check digit' do
+      it 'displays the complete ISBN' do
         result = Calculate::CalculateDigits.new(isbn_input: isbn_input).call
-        expect(result).to eq('4')
+        expect(result).to eq('9780143007234')
       end 
     end
+    
+    context "when the expected check digit is 0" do 
+      isbn_input = '978014308291'
 
-    context "when the input has letters" do
-      isbn_input = '978014300723asd'
-
-      it_behaves_like 'raises exception', isbn_input
+      it 'displays the complete ISBN with 0 as the last digit' do
+        result = Calculate::CalculateDigits.new(isbn_input: isbn_input).call
+        expect(result).to eq('9780143082910')
+      end 
     end
+    
 
-    # context "when the input has a length other than 12" do
-    #   isbn_input = '97801430072'
-
-    #   it_behaves_like 'raises exception', isbn_input
-    # end
+    
 
     # context "when the input does not start 978" do
     #   isbn_input = '12301430072'
