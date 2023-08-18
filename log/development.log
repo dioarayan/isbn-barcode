@@ -1,0 +1,31 @@
+Started GET "/" for 127.0.0.1 at 2023-08-19 00:53:17 +0800
+Processing by IsbnController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering isbn/index.html.erb within layouts/application
+  Rendered isbn/_form.html.erb (Duration: 19.4ms | Allocations: 6696)
+  Rendered isbn/_index.html.erb (Duration: 20.5ms | Allocations: 7109)
+  Rendered isbn/index.html.erb within layouts/application (Duration: 22.9ms | Allocations: 7838)
+  Rendered layout layouts/application.html.erb (Duration: 537.6ms | Allocations: 99219)
+Completed 200 OK in 655ms (Views: 568.3ms | ActiveRecord: 0.0ms | Allocations: 106029)
+
+
+Started POST "/isbn-result" for 127.0.0.1 at 2023-08-19 00:53:24 +0800
+Processing by IsbnController#calculate_isbn as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "isbn_input"=>"121212", "commit"=>"Calculate"}
+  Rendering isbn/calculate_isbn.turbo_stream.erb
+  Rendered isbn/_final_result.html.erb (Duration: 0.8ms | Allocations: 162)
+  Rendered isbn/calculate_isbn.turbo_stream.erb (Duration: 19.5ms | Allocations: 1151)
+Completed 200 OK in 47ms (Views: 35.6ms | ActiveRecord: 0.0ms | Allocations: 4296)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-19 00:53:25 +0800
+Processing by IsbnController#index as HTML
+  Rendering layout /usr/share/rvm/gems/ruby-3.1.3/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering isbn/index.html.erb within layouts/turbo_rails/frame
+  Rendered isbn/_form.html.erb (Duration: 5.0ms | Allocations: 1329)
+  Rendered isbn/_index.html.erb (Duration: 5.9ms | Allocations: 1438)
+  Rendered isbn/index.html.erb within layouts/turbo_rails/frame (Duration: 6.8ms | Allocations: 1544)
+  Rendered layout /usr/share/rvm/gems/ruby-3.1.3/gems/turbo-rails-1.4.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 10.1ms | Allocations: 1772)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 2103)
+
+
