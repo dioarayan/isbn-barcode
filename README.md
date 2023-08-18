@@ -27,15 +27,15 @@ rails s
 
 Open your favorite browser and enter localhost:3000
 
-
+<p>
   ![alt text](../assets/Screenshot_from_2023-08-18_16-30-35.png?raw=true)
-
+</p>
 
 Try to enter an ISBN13 barcode and click Calculate button to generate the complete ISBN13.
 
-
+<p>
   ![alt text](../assets/Screenshot_from_2023-08-18_16-31-10.png?raw=true)
-
+</p>
 
 <h3>3. Testing the app </h3>
 
