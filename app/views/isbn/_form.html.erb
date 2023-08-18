@@ -1,0 +1,7 @@
+  <%= form_with url: calculate_isbn_path, remote: true do |f| %>
+    <%= f.number_field :isbn_input, required: true %>
+    <div class="form-controls">
+      <%= f.submit "Calculate" %>
+      <%= link_to "Reset", root_path %>
+    </div>
+  <% end %>
