@@ -17,6 +17,10 @@ body {
   margin: 20% auto auto;
 }
 
+h2 {
+  color: #008080;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -44,7 +48,7 @@ input[type=number] {
   padding: 12px;
   width: 100%;
   box-sizing: border-box;
-  border: 3px solid #ccc;
+  border: 3px solid #0ABAB5;
   transition: 0.5s;
   outline: none;
   font-size: 1rem;
@@ -53,7 +57,7 @@ input[type=number] {
 
 a {
   text-decoration: none;
-  background-color: #ccc;
+  background-color: #0ABAB5;
   color: black;
   flex-basis: 30%;
 }
