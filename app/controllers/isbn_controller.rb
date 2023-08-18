@@ -1,22 +1,34 @@
-class IsbnController < ApplicationController\
+class IsbnController < ApplicationController
+  before_action :check_for_cancel
 
-  def index     
-
+  def index    
+    respond_to do |format|
+      format.html
+      format.turbo_stream
+    end
   end 
 
-  def solve
-    final_ISBN = Calculate::CalculateDigits.call(isbn_input: get_input)
+  def calculate_isbn
+    @final_result = Calculate::CalculateDigits.call(isbn_input: get_input)
     respond_to do |format|
-      format.html {render :result, locals: { result: final_ISBN }}
+      format.turbo_stream
+      format.html { render :index, alert: "Successfully calculated ISBN!" }
     end
-      rescue DocumentForwardingException => e
-      redirect_to request.path, error: e.calculate_error_message
+      rescue CalculateDigitsException => e
+      redirect_to root_path, alert: e.formatting_error_message
   end
+
+  def check_for_cancel
+    if params[:commit] == "Cancel"
+      redirect_to root_path
+    end
+  end
+  
 
   private
 
   def get_input 
-    @input = params[:isbn_input]
+    return params[:isbn_input]
   end
 
 end
