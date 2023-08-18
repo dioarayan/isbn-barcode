@@ -1,4 +1,4 @@
-<h1>ISBN Barcode Check Digit Calculator (MY BEST PRACTICE)</h1>
+<h1>ISBN Barcode Check Digit Calculator <br>(MY BEST PRACTICE)</h1>
 
 This project covers the steps in generating the check digit of the ISBN13 barcode. The language I used is mostly Ruby on Rails because I thrived for being a full-stack developer. Future improvement for this project includes implementing CSS Framework and ISBN13 format testing.
 
@@ -27,15 +27,19 @@ rails s
 
 <p>Open your favorite browser and enter localhost:3000</p>
 
+<div style="width:80px ; height:auto">
 
-![alt text](../assets/2023-08-18_16-30-35.png?raw=true)
+  ![alt text](../assets/2023-08-18_16-30-35.png?raw=true)
 
+</div>
 
 <p>Try to enter an ISBN13 barcode and click Calculate button to generate the complete ISBN13.</p>
 
+<div style="width:80px ; height:auto">
 
-![alt text](../assets/2023-08-18_16-31-10.png?raw=true)
+  ![alt text](../assets/2023-08-18_16-31-10.png?raw=true)
 
+</div>
 
 <h3>3. Testing the app </h3>
 
