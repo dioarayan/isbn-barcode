@@ -46,8 +46,12 @@ bundle install #instal ruby gems
 ``` 
 rails s
 ```
-![alt text](../media/13-57-25.png?raw=true)
+Open your favorite browser and enter localhost:3000
 
-![alt text](../media/16-00-51.png?raw=true)
+![alt text](../media/Screenshot_from_2023-08-18_16-30-35.png?raw=true)
+
+Try to enter a ISBN13 barcode and click Calculate button to generate the complete ISBN13.
+
+![alt text](../media/Screenshot_from_2023-08-18_16-31-10.png?raw=true)
 
 
