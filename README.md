@@ -7,6 +7,7 @@ Things you may want to cover:
 
 * Ruby version
 
+
 * System dependencies
 
 * Configuration
@@ -22,3 +23,31 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+ISBN Barcode Check Digit Calculator (MY BEST PRACTICE)
+
+This project covers the steps in generating the check digit of the ISBN13 barcode. The language I used is mostly Ruby on Rails because I thrived for being a full-stack developer. 
+
+1. How to run
+
+```
+git clone git@github.com:dioarayan/isbn-cd-generator.git
+cd isbn-cd-generator
+```
+
+1.1: Installation
+
+```
+bundle install #instal ruby gems
+```
+
+1.2: Run the app
+
+``` 
+rails s
+```
+![alt text](../media/13-57-25.png?raw=true)
+
+![alt text](../media/16-00-51.png?raw=true)
+
+
