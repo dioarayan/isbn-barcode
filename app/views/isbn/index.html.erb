@@ -1,13 +1,3 @@
-<section>
-  <h3 style="text-align: center;">Enter ISBN:</h3>
-
-  <%= form_tag(calculate_isbn_path, method: :post, remote: true) do %>
-    <%= number_field_tag :isbn_input, required: true %>
-    <%= submit_tag "Calculate" %>
-  <% end %>
-
-  <%= turbo_frame_tag 'isbn_result' do %>
-
-  <% end %>
-
-</section>
+<%= turbo_frame_tag 'app' do %>
+  <%= render 'index' %> 
+<% end %>
