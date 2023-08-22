@@ -26,16 +26,8 @@ RSpec.describe 'CalculateDigitsService' do
         expect(result).to eq('9780143082910')
       end 
     end
-    
-
-    
-
-    # context "when the input does not start 978" do
-    #   isbn_input = '12301430072'
-
-    #   it_behaves_like 'raises exception', isbn_input
-    # end
 
   end
 
 end
+
