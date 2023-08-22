@@ -1,4 +1,4 @@
-<h1>ISBN Barcode Check Digit Calculator <br>(MY BEST PRACTICE)</h1>
+<h1>ISBN Barcode Check Digit Generator <br>(My Best Practice)</h1>
 
 This project covers the steps in generating the check digit of the ISBN13 barcode. The language I used is mostly Ruby on Rails because I thrived for being a full-stack developer. Future improvement for this project includes implementing CSS Framework and ISBN13 format testing.
 
@@ -59,14 +59,6 @@ docker-compose up
 <h2>3. Testing the app </h2>
 
 Test the application by entering this on the terminal. Please ensure that you are on the same project directory before running this command.
-
-<h3> Testing in local </h3>
-
-```
-docker-compose run --rm app rspec spec
-```
-
-<h3> Testing in docker </h3>
 
 ```
 docker-compose run --rm app rspec spec
