@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "#Index", type: :feature do
+RSpec.describe "#Index", type: :feature, js: true do
 
   before do 
     visit root_path
@@ -20,9 +20,8 @@ RSpec.describe "#Index", type: :feature do
         fill_in 'isbn_input', with: "978014300723"
         click_button "Calculate" 
       end
-      debugger
-
-      expect(page).to have_content("Complete ISBN is:9780143007234")
+      
+      expect(page).to have_content("Complete ISBN is: 9780143007234")
     end
   end
 
